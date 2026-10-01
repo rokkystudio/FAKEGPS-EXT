@@ -150,14 +150,13 @@
       position: absolute;
       z-index: 20;
       display: none;
-      width: 20px;
-      height: 20px;
-      border: 3px solid white;
-      border-radius: 50% 50% 50% 0;
-      background: var(--color-primary);
-      box-shadow: 0 2px 6px rgba(0, 0, 0, .35);
-      transform: translate(-50%, -100%) rotate(-45deg);
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, .35));
+      transform: translate(-50%, -100%);
       pointer-events: none;
+      user-select: none;
     }
 
     .map-marker.visible {
@@ -245,7 +244,7 @@
   <div id="map" class="map">
     <div id="map-content" class="map-content">
       <div id="map-tiles" class="map-tiles"></div>
-      <div id="map-marker" class="map-marker"></div>
+      <img id="map-marker" class="map-marker" src="img/marker.png" alt="">
     </div>
   </div>
 

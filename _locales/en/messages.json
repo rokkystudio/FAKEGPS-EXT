@@ -44,18 +44,6 @@
   "clickMapToSelect": {
     "message": "Click the map to select a location"
   },
-  "zoomOut": {
-    "message": "Zoom out"
-  },
-  "zoomIn": {
-    "message": "Zoom in"
-  },
-  "noPointSelected": {
-    "message": "No point selected"
-  },
-  "clickMapChooseCoordinates": {
-    "message": "Click the map to choose coordinates"
-  },
   "cancel": {
     "message": "Cancel"
   },
@@ -67,9 +55,6 @@
   },
   "delete": {
     "message": "Delete"
-  },
-  "resolvingLocation": {
-    "message": "Resolving location..."
   },
   "osmContributors": {
     "message": "© OpenStreetMap contributors"
@@ -94,9 +79,6 @@
   },
   "noActiveLocation": {
     "message": "No active location"
-  },
-  "esriAttribution": {
-    "message": "© Esri, HERE, Garmin · © OpenStreetMap contributors"
   },
   "searchLocationPlaceholder": {
     "message": "Search location"

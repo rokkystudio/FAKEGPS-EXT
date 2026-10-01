@@ -806,6 +806,16 @@ document.addEventListener('DOMContentLoaded', function()
       longitude: editingLocation ? editingLocation.longitude : currentSettings.longitude
     };
 
+    if (editingLocation) {
+      mapSelection = {
+        latitude: editingLocation.latitude,
+        longitude: editingLocation.longitude,
+        name: editingLocation.name,
+        countryCode: editingLocation.countryCode
+      };
+      applyButton.disabled = false;
+    }
+
     visualZoom = mapZoom;
     targetZoom = mapZoom;
     renderChrome();

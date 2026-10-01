@@ -2,7 +2,7 @@
 
 ## Versioning
 
-Current version: `1.0.27`.
+Current version: `1.0.28`.
 
 Every code or UI change increments only the third version component: `1.0.7`, `1.0.8`, `1.0.9`, and so on.
 
@@ -56,6 +56,7 @@ The popup UI follows the compact interaction model from `C:\FILES\PROJECTS\HIDEM
 - [x] Normalize mouse-wheel detents to integer map zoom levels while preserving fractional high-resolution input.
 - [x] Use a single 128x128 extension icon file (`img/icon.png`) instead of separate size-specific files.
 - [x] Use dedicated large RU/US language flags for the language switcher while keeping small country flags for location rows.
+- [x] Remove obsolete embedded-map popup CSS and stale map locale strings.
 - [x] Require an explicit map click before Apply can create or modify a location in the standalone picker.
 - [x] Add delete confirmation dialog.
 - [x] Resolve location name and countryCode from map coordinates with reverse geocoding.

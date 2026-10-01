@@ -44,18 +44,6 @@
   "clickMapToSelect": {
     "message": "Нажмите на карту, чтобы выбрать локацию"
   },
-  "zoomOut": {
-    "message": "Уменьшить масштаб"
-  },
-  "zoomIn": {
-    "message": "Увеличить масштаб"
-  },
-  "noPointSelected": {
-    "message": "Точка не выбрана"
-  },
-  "clickMapChooseCoordinates": {
-    "message": "Нажмите на карту, чтобы выбрать координаты"
-  },
   "cancel": {
     "message": "Отмена"
   },
@@ -67,9 +55,6 @@
   },
   "delete": {
     "message": "Удалить"
-  },
-  "resolvingLocation": {
-    "message": "Определяем локацию..."
   },
   "osmContributors": {
     "message": "© Участники OpenStreetMap"
@@ -94,9 +79,6 @@
   },
   "noActiveLocation": {
     "message": "Нет активной локации"
-  },
-  "esriAttribution": {
-    "message": "© Esri, HERE, Garmin · © участники OpenStreetMap"
   },
   "searchLocationPlaceholder": {
     "message": "Поиск по названию"

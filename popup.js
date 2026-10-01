@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function()
   const languageButton = document.getElementById('language-button');
   const languageFlag = document.getElementById('language-flag');
   const statusBadge = document.getElementById('status-badge');
+  const activeLocation = document.querySelector('.active-location');
   const activeLocationFlag = document.getElementById('active-location-flag');
   const activeLocationName = document.getElementById('active-location-name');
   const activeLocationAddress = document.getElementById('active-location-address');
@@ -402,17 +403,18 @@ document.addEventListener('DOMContentLoaded', function()
     savedLocations.forEach((location) => {
       const item = document.createElement('div');
       item.className = 'menu-item';
+      const isActive = isActiveLocation(location);
 
-      if (isActiveLocation(location)) {
+      if (isActive) {
         item.classList.add('active');
       }
 
       const row = document.createElement('span');
       row.className = 'menu-item-subitem';
 
-      const arrow = document.createElement('i');
-      arrow.className = 'toggle-button';
-      arrow.textContent = '→';
+      const toggleIcon = document.createElement('i');
+      toggleIcon.className = 'toggle-button';
+      toggleIcon.textContent = isActive ? '×' : '→';
 
       const flag = document.createElement('img');
       flag.className = 'menu-flag';
@@ -449,7 +451,7 @@ document.addEventListener('DOMContentLoaded', function()
       textElement.appendChild(address);
       actions.appendChild(editButton);
       actions.appendChild(deleteButton);
-      row.appendChild(arrow);
+      row.appendChild(toggleIcon);
       row.appendChild(flag);
       row.appendChild(textElement);
       row.appendChild(actions);
@@ -691,6 +693,14 @@ document.addEventListener('DOMContentLoaded', function()
       ...currentSettings,
       enabled: enableToggle.checked
     }).catch(() => {});
+  });
+
+  activeLocation.addEventListener('click', (event) => {
+    if (event.target.closest('.switch')) {
+      return;
+    }
+
+    enableToggle.click();
   });
 
   addLocationButton.addEventListener('click', () => {
