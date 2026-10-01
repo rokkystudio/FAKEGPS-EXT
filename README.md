@@ -1,6 +1,10 @@
 # Fake GPS
 
-Расширение для Chromium-браузеров, которое подменяет Browser Geolocation API и позволяет быстро переключаться между сохранёнными локациями.
+<p align="right">🌐 Language: <strong>Русский</strong> | <a href="README_EN.md">English</a></p>
+
+Расширение для Chromium-браузеров Google Chrome и Microsoft Edge, которое подменяет Browser Geolocation API и позволяет быстро переключаться между сохранёнными локациями.
+
+Ключевые слова: Google Chrome, Microsoft Edge, Chrome Extension, Edge Extension, Browser Extension, Extention.
 
 ![Fake GPS](files/screen.png)
 
