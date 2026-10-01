@@ -1,0 +1,116 @@
+{
+  "appName": {
+    "message": "Fake GPS"
+  },
+  "appDescription": {
+    "message": "Select, save, switch and spoof browser geolocation."
+  },
+  "changeLanguage": {
+    "message": "Change language"
+  },
+  "locationSpoofingEnabled": {
+    "message": "Location spoofing enabled"
+  },
+  "locationSpoofingDisabled": {
+    "message": "Location spoofing disabled"
+  },
+  "enableLocationSpoofing": {
+    "message": "Enable or disable location spoofing"
+  },
+  "availableLocations": {
+    "message": "Available Locations"
+  },
+  "addLocation": {
+    "message": "Add location"
+  },
+  "editLocation": {
+    "message": "Edit location"
+  },
+  "deleteLocation": {
+    "message": "Delete location"
+  },
+  "noSavedLocations": {
+    "message": "No saved locations"
+  },
+  "addLocationTitle": {
+    "message": "Add Location"
+  },
+  "editLocationTitle": {
+    "message": "Edit Location"
+  },
+  "close": {
+    "message": "Close"
+  },
+  "clickMapToSelect": {
+    "message": "Click the map to select a location"
+  },
+  "zoomOut": {
+    "message": "Zoom out"
+  },
+  "zoomIn": {
+    "message": "Zoom in"
+  },
+  "noPointSelected": {
+    "message": "No point selected"
+  },
+  "clickMapChooseCoordinates": {
+    "message": "Click the map to choose coordinates"
+  },
+  "cancel": {
+    "message": "Cancel"
+  },
+  "apply": {
+    "message": "Apply"
+  },
+  "deleteQuestion": {
+    "message": "Delete this saved location?"
+  },
+  "delete": {
+    "message": "Delete"
+  },
+  "resolvingLocation": {
+    "message": "Resolving location..."
+  },
+  "osmContributors": {
+    "message": "© OpenStreetMap contributors"
+  },
+  "english": {
+    "message": "English"
+  },
+  "russian": {
+    "message": "Russian"
+  },
+  "browserExtension": {
+    "message": "Location Spoofing"
+  },
+  "changeTheme": {
+    "message": "Change theme"
+  },
+  "lightTheme": {
+    "message": "Light theme"
+  },
+  "darkTheme": {
+    "message": "Dark theme"
+  },
+  "noActiveLocation": {
+    "message": "No active location"
+  },
+  "esriAttribution": {
+    "message": "© Esri, HERE, Garmin · © OpenStreetMap contributors"
+  },
+  "searchLocationPlaceholder": {
+    "message": "Search location"
+  },
+  "search": {
+    "message": "Search"
+  },
+  "latitude": {
+    "message": "Latitude"
+  },
+  "longitude": {
+    "message": "Longitude"
+  },
+  "goToCoordinates": {
+    "message": "Go"
+  }
+}

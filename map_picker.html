@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Fake GPS</title>
+  <style>
+    :root {
+      --color-bg: #fafafa;
+      --color-surface: #ffffff;
+      --color-panel: #f0f0f0;
+      --color-text: #191a1c;
+      --color-text-secondary: #515255;
+      --color-border: #dddddd;
+      --color-border-soft: #e4e5e8;
+      --color-primary: #00acf7;
+      --color-primary-hover: #0098dc;
+    }
+
+    :root[data-theme="dark"] {
+      --color-bg: #111418;
+      --color-surface: #1d232a;
+      --color-panel: #222732;
+      --color-text: #f2f5f8;
+      --color-text-secondary: #aeb2b6;
+      --color-border: #2a323b;
+      --color-border-soft: #34404b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+      background: var(--color-bg);
+      color: var(--color-text);
+      font-family: system-ui, sans-serif;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-width: 420px;
+      min-height: 520px;
+    }
+
+    .location-tools {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--color-border);
+      background: var(--color-surface);
+    }
+
+    .search-row,
+    .coordinates-row {
+      display: flex;
+      gap: 8px;
+    }
+
+    .field {
+      width: 100%;
+      height: 34px;
+      min-width: 0;
+      padding: 0 10px;
+      border: 1px solid var(--color-border);
+      border-radius: 7px;
+      outline: none;
+      background: var(--color-surface);
+      color: var(--color-text);
+      font: inherit;
+      font-size: 13px;
+    }
+
+    .field:focus {
+      border-color: var(--color-primary);
+    }
+
+    .coordinate-field {
+      flex: 1 1 0;
+    }
+
+    .tool-button {
+      height: 34px;
+      flex: 0 0 auto;
+      padding: 0 14px;
+      border: 1px solid var(--color-border);
+      border-radius: 7px;
+      background: var(--color-surface);
+      color: var(--color-text);
+      cursor: pointer;
+      font-family: system-ui, sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .tool-button:hover {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+    }
+
+    .tool-button:disabled {
+      cursor: default;
+      opacity: .5;
+    }
+
+    .map {
+      position: relative;
+      flex: 1 1 auto;
+      min-height: 300px;
+      overflow: hidden;
+      background: #dbeafe;
+      cursor: crosshair;
+      touch-action: none;
+      user-select: none;
+    }
+
+    .map.dragging {
+      cursor: grabbing;
+    }
+
+    .map-content {
+      position: absolute;
+      inset: 0;
+      transform: scale(1);
+      transform-origin: center center;
+      will-change: transform;
+    }
+
+    .map-tiles {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    .map-tile {
+      position: absolute;
+      width: 256px;
+      height: 256px;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .map-marker {
+      position: absolute;
+      z-index: 20;
+      display: none;
+      width: 20px;
+      height: 20px;
+      border: 3px solid white;
+      border-radius: 50% 50% 50% 0;
+      background: var(--color-primary);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, .35);
+      transform: translate(-50%, -100%) rotate(-45deg);
+      pointer-events: none;
+    }
+
+    .map-marker.visible {
+      display: block;
+    }
+
+    .attribution {
+      padding: 4px 10px;
+      border-top: 1px solid var(--color-border);
+      background: var(--color-surface);
+      color: var(--color-text-secondary);
+      font-size: 10px;
+      text-align: right;
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-top: 1px solid var(--color-border);
+      background: var(--color-surface);
+    }
+
+    .actions-hint {
+      flex: 1 1 auto;
+      min-width: 0;
+      color: var(--color-text-secondary);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .button {
+      min-width: 120px;
+      height: 38px;
+      padding: 0 18px;
+      border: 1px solid var(--color-border);
+      border-radius: 7px;
+      background: var(--color-surface);
+      color: var(--color-text);
+      cursor: pointer;
+      font-family: system-ui, sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .button:hover {
+      border-color: var(--color-primary);
+    }
+
+    .button.primary {
+      border-color: var(--color-primary);
+      background: var(--color-primary);
+      color: #ffffff;
+    }
+
+    .button.primary:hover {
+      background: var(--color-primary-hover);
+    }
+
+    .button:disabled {
+      cursor: default;
+      opacity: .45;
+    }
+
+    .button:disabled:hover {
+      border-color: var(--color-primary);
+      background: var(--color-primary);
+    }
+  </style>
+</head>
+<body>
+  <div class="location-tools">
+    <div class="search-row">
+      <input id="search-input" class="field" type="search" autocomplete="off">
+      <button id="search-button" class="tool-button" type="button"></button>
+    </div>
+    <div class="coordinates-row">
+      <input id="latitude-input" class="field coordinate-field" type="number" step="any" min="-90" max="90">
+      <input id="longitude-input" class="field coordinate-field" type="number" step="any" min="-180" max="180">
+      <button id="coordinates-button" class="tool-button" type="button"></button>
+    </div>
+  </div>
+
+  <div id="map" class="map">
+    <div id="map-content" class="map-content">
+      <div id="map-tiles" class="map-tiles"></div>
+      <div id="map-marker" class="map-marker"></div>
+    </div>
+  </div>
+
+  <div id="attribution" class="attribution">&copy; OpenStreetMap contributors</div>
+
+  <div class="actions">
+    <div id="actions-hint" class="actions-hint"></div>
+    <button id="cancel-button" class="button" type="button"></button>
+    <button id="apply-button" class="button primary" type="button" disabled></button>
+  </div>
+
+  <script src="map_picker.js"></script>
+</body>
+</html>

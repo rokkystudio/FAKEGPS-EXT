@@ -1,0 +1,116 @@
+{
+  "appName": {
+    "message": "Fake GPS"
+  },
+  "appDescription": {
+    "message": "Выбор, сохранение, переключение и подмена геолокации браузера."
+  },
+  "changeLanguage": {
+    "message": "Сменить язык"
+  },
+  "locationSpoofingEnabled": {
+    "message": "Подмена геолокации включена"
+  },
+  "locationSpoofingDisabled": {
+    "message": "Подмена геолокации выключена"
+  },
+  "enableLocationSpoofing": {
+    "message": "Включить или выключить подмену геолокации"
+  },
+  "availableLocations": {
+    "message": "Доступные локации"
+  },
+  "addLocation": {
+    "message": "Добавить локацию"
+  },
+  "editLocation": {
+    "message": "Изменить локацию"
+  },
+  "deleteLocation": {
+    "message": "Удалить локацию"
+  },
+  "noSavedLocations": {
+    "message": "Нет сохранённых локаций"
+  },
+  "addLocationTitle": {
+    "message": "Добавить локацию"
+  },
+  "editLocationTitle": {
+    "message": "Изменить локацию"
+  },
+  "close": {
+    "message": "Закрыть"
+  },
+  "clickMapToSelect": {
+    "message": "Нажмите на карту, чтобы выбрать локацию"
+  },
+  "zoomOut": {
+    "message": "Уменьшить масштаб"
+  },
+  "zoomIn": {
+    "message": "Увеличить масштаб"
+  },
+  "noPointSelected": {
+    "message": "Точка не выбрана"
+  },
+  "clickMapChooseCoordinates": {
+    "message": "Нажмите на карту, чтобы выбрать координаты"
+  },
+  "cancel": {
+    "message": "Отмена"
+  },
+  "apply": {
+    "message": "Применить"
+  },
+  "deleteQuestion": {
+    "message": "Удалить сохранённую локацию?"
+  },
+  "delete": {
+    "message": "Удалить"
+  },
+  "resolvingLocation": {
+    "message": "Определяем локацию..."
+  },
+  "osmContributors": {
+    "message": "© Участники OpenStreetMap"
+  },
+  "english": {
+    "message": "Английский"
+  },
+  "russian": {
+    "message": "Русский"
+  },
+  "browserExtension": {
+    "message": "Подмена геолокации"
+  },
+  "changeTheme": {
+    "message": "Сменить тему"
+  },
+  "lightTheme": {
+    "message": "Светлая тема"
+  },
+  "darkTheme": {
+    "message": "Тёмная тема"
+  },
+  "noActiveLocation": {
+    "message": "Нет активной локации"
+  },
+  "esriAttribution": {
+    "message": "© Esri, HERE, Garmin · © участники OpenStreetMap"
+  },
+  "searchLocationPlaceholder": {
+    "message": "Поиск по названию"
+  },
+  "search": {
+    "message": "Найти"
+  },
+  "latitude": {
+    "message": "Широта"
+  },
+  "longitude": {
+    "message": "Долгота"
+  },
+  "goToCoordinates": {
+    "message": "Перейти"
+  }
+}
